@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	 <package name="ch14" namespace="" extends="struts-default">
+	 	<action name="Login" class="com.lth.UserloginAction" method="Login">
+            <result name="success">/index.jsp</result>
+            <result name="error">login.jsp</result>
+            <result name="input">/login.jsp</result>
+        </action>
+        
+        <action name="Textcommit" class="com.lth.UserloginAction" method="TextCommit">
+            <result name="success">/success.jsp</result>
+            <result name="error">/index.jsp</result>
+            
+        </action>
+	 
+	 </package>
+
+</struts>    
