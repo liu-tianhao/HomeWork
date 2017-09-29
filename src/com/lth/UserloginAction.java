@@ -16,8 +16,7 @@ public class UserloginAction extends ActionSupport {
 	private String pass;
 	private String cont;
 	InputService ips = new InputService();
-	HttpServletRequest request = ServletActionContext.getRequest();
-	HttpSession session = request.getSession();
+	
 	
 	int id[] = new int[41];
 	
@@ -31,11 +30,12 @@ public class UserloginAction extends ActionSupport {
 	public String Login(){	//登陆
 		System.out.println(name);
 		id = forid();
-		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession session = request.getSession();
 		
 		for(int i = 0 ;i<=40 ; i++){
 			if(id[i] == (Integer.parseInt(name)) && pass.equals("123456")){
-				session.setAttribute("userList", "logging");
+				session.setAttribute("userList", id[i]);
 				return "success";
 			}
 		}
@@ -45,7 +45,8 @@ public class UserloginAction extends ActionSupport {
 	public String Textcommit(){
 		System.out.print(name);
 		System.out.println(cont);
-		
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpSession session = request.getSession();
 			try {
 					
 					ips.TitleWrite("E", name, name+"   "+cont);

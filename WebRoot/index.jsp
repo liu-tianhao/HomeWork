@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,16 +12,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	out.print(session.getAttribute("userList"));
 	if(session.getAttribute("userList") != null){
 	
-		if(session.getAttribute("userList") != "logging"){
+		if(session.getAttribute("userList").equals(name)){
 		
+			//System.out.println(session.getAttribute("userList") != name);
 			response.sendRedirect("login.jsp");
-		} 
+		}
 	}else{
 			response.sendRedirect("login.jsp");
 	}; 
 	
 	
  %>
+ <s:debug/>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
