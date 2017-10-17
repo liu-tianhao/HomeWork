@@ -13,6 +13,12 @@
             <result name="error">/index.jsp</result>
             
         </action>
+        
+        <action name="VideosName" class="com.lth.UserloginAction" method="VideosName">
+            <result name="success">/video.jsp</result>
+            <result name="error">/index.jsp</result>
+            
+        </action>
 	 
 	 </package>
 

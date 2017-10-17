@@ -1,5 +1,6 @@
 package com.lth;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
@@ -10,16 +11,26 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.service.InputService;
+import com.service.VideosService;
 
 public class UserloginAction extends ActionSupport {
 	private String name;
 	private String pass;
 	private String cont;
+	
+	private String filesname;
+	
+	private String[] videofile;
 	InputService ips = new InputService();
 	
 	
 	int id[] = new int[41];
 	
+	
+	public static void main(String[] args) {
+		UserloginAction us = new UserloginAction();
+		us.VideosName();
+	}
 	private int[] forid(){
 		int num = 501;
 		for(int i = 0 ;i<=40;i++){
@@ -61,6 +72,20 @@ public class UserloginAction extends ActionSupport {
 		return "success";
 	}
 	
+	public String VideosName(){
+		VideosService vf = new VideosService();
+		
+		videofile = vf.getFiles(filesname);
+		
+		for(String name : videofile){
+			
+			System.out.println(name);
+		}
+		
+		return "success";
+	}
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -80,5 +105,18 @@ public class UserloginAction extends ActionSupport {
 	public void setCont(String cont) {
 		this.cont = cont;
 	}
+	public String getFilesname() {
+		return filesname;
+	}
+	public void setFilesname(String filesname) {
+		this.filesname = filesname;
+	}
+	public String[] getVideofile() {
+		return videofile;
+	}
+	public void setVideofile(String[] videofile) {
+		this.videofile = videofile;
+	}
+	
 	
 }
