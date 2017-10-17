@@ -1,8 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
+
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+response.setCharacterEncoding("UTF-8");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -11,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'video.jsp' starting page</title>
-    
+   
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -30,12 +32,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<input type="submit">
     	</form>
     </div>
+    
+    
     	<table>
     
 	    	<s:iterator value="videofile" id='videoname'> 
 	    		
 	    		
-	    		<a href="movies.jsp?name=<s:property value='videoname'/>"><s:property value='videoname'/></a>
+	    		<a charset="utf-8" href="movies.jsp?name=<s:property value='videoname'/>"><s:property value='videoname'/></a>
 				<br/>
 			
 			</s:iterator> 
