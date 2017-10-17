@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*"  contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*"   pageEncoding="utf-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'video.jsp' starting page</title>
-   	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+   
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -45,17 +45,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <%
   	
-  	//String name = request.getParameter("name").getBytes("ISO-8859-1");
+  	//String name = request.getParameter("name");
 	String name = new String(request.getParameter("name").getBytes("ISO-8859-1"),"UTF-8");
 	String srcname = "videos/"+name;
-	out.print(srcname);
+	//out.print(srcname);
    %>
    
   <body>
   
   	<div>
     	<form action="VideosName!VideosName.action">
-    	<input type="text" name="filesname">
+    	<input type="text" name="filesname" required="required" placeholder="文件所在位置">
     	<input type="submit">
     	</form>
     </div>

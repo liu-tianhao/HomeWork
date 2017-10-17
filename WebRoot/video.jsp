@@ -1,10 +1,10 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*"  pageEncoding="utf-8"%>
 
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-response.setCharacterEncoding("UTF-8");
+//response.setCharacterEncoding("UTF-8");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -28,7 +28,7 @@ response.setCharacterEncoding("UTF-8");
   <body>
   	<div>
     	<form action="VideosName!VideosName.action" method="post">
-    	<input type="text" name="filesname">
+    	<input type="text" name="filesname" required="required" placeholder="文件所在位置">
     	<input type="submit">
     	</form>
     </div>
@@ -39,7 +39,7 @@ response.setCharacterEncoding("UTF-8");
 	    	<s:iterator value="videofile" id='videoname'> 
 	    		
 	    		
-	    		<a charset="utf-8" href="movies.jsp?name=<s:property value='videoname'/>"><s:property value='videoname'/></a>
+	    		<a href="movies.jsp?name=<s:property value='videoname'/>"><s:property value='videoname'/></a>
 				<br/>
 			
 			</s:iterator> 
