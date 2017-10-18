@@ -10,7 +10,7 @@ public class VideosService {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		File file = new File(".\\webroot");
+		/*File file = new File(".\\webroot");
 		System.out.println(file.getPath());
 		Runtime rt = Runtime.getRuntime();
 		Process p;
@@ -23,9 +23,10 @@ public class VideosService {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
-		
+		VideosService vs = new VideosService();
+		vs.FilesCreate("G:/视频/执念师一");
 		
 	}
 	
@@ -39,12 +40,11 @@ public class VideosService {
 		Runtime rt = Runtime.getRuntime();
 		Process p;
 		try {
-			String pathint = "F:/workspace/HomeWork/WebRoot/videos";
-			String pathsource = "G:/视频/执念师一";
+			String pathint = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/Test/videos";
+			//String pathint = "F:/workspace/HomeWork/WebRoot/videos";
+			String pathsource = "G:/视频/执念师一"; //源文件，页面输入
 			String cmd = "cmd.exe /k mklink /j "+"\""+ pathint+"\" " + "\""+ path +"\"" ;
 			p = rt.exec(cmd);
-			
-			
 			//System.out.println(cmd);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
