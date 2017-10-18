@@ -3,7 +3,8 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
+response.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8");
 %>
 
 

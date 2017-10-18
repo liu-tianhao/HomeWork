@@ -4,7 +4,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
+response.setCharacterEncoding("utf-8");
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -21,7 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
+  <script>
+  	
+  </script>
   <body>
   	<div>
     	<form action="VideosName!VideosName.action" method="post">
@@ -35,12 +37,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
 	    	<s:iterator value="videofile" id='videoname'> 
 	    		
-	    		<form method="post" action="CheckVideoName!CheckVideoName.action?videonames=<s:property value='videoname'/>" >
+	    		<form method="post" action="CheckVideoName!CheckVideoName.action?commitNames=我" >
 	    			
 	    			<input type="submit">
 	    		</form>
 	    		
-	    		<a charset="utf-8" href="CheckVideoName!CheckVideoName.action?commitNames=<s:property value='videoname'/>"><s:property value='videoname'/></a>
+	    		<a onclick="move(this)" href="CheckVideoName!CheckVideoName.action?commitNames=<s:property value='videoname'/>"><s:property value='videoname'/></a>
 				
 	    		<br/>
 			

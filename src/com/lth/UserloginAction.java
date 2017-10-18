@@ -2,9 +2,11 @@ package com.lth;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -87,9 +89,13 @@ public class UserloginAction extends ActionSupport {
 		return "success";
 	}
 	
-	public String CheckVideoName(){
+	public String CheckVideoName() throws UnsupportedEncodingException{
 		HttpServletRequest hr = ServletActionContext.getRequest();
-		commitName = hr.getParameter("commitNames");
+		HttpServletResponse hrs =   ServletActionContext.getResponse();
+		
+		commitName=	new String(hr.getParameter("commitNames").getBytes("ISO-8859-1"),"UTF-8");
+		
+		//commitName = hr.getParameter("commitNames");
 		//System.out.println(name);
 		//System.out.println(hr.getParameter("commitNames"));
 		System.out.println(commitName);
