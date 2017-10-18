@@ -14,18 +14,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>My JSP 'video.jsp' starting page</title>
    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+	<meta charset="utf-8"></meta>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
   </head>
-  <script type="text/javascript">
-	 /*  function GetQueryString(name){
+  <script type="text/javascript" charset="utf-8">
+	  /* function GetQueryString(name){
 	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
 	     var r = window.location.search.substr(1).match(reg);
 	     if(r!=null)return  unescape(r[2]); return null;
@@ -37,21 +33,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		var video = document.getElementById("video");
 			var src = GetQueryString("name");
 			alert(src);
-			video.src="f:\workspace\HomeWork\WebRoot\videos\testqqw.mp4";
+			//video.src="f:\workspace\HomeWork\WebRoot\videos\testqqw.mp4";
 			alert(video.src);
-    } */
+    }  */
     
   </script>
   
   <%
   	
   	//String name = request.getParameter("name");
-	String name = new String(request.getParameter("name").getBytes("ISO-8859-1"),"UTF-8");
-	String srcname = "videos/"+name;
+	/* String name = new String(request.getParameter("name").getBytes("ISO-8859-1"),"UTF-8");
+	String srcname = "videos/"+name; */
 	//out.print(srcname);
    %>
    
   <body>
+  
   
   	<div>
     	<form action="VideosName!VideosName.action">
@@ -61,8 +58,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     	<table>
 	    		<tr>
-	    			<td><%=srcname %><video width="500" height="250" controls="controls">
-	    				<source id="video" src="<%=srcname %>" type="video/mp4"></source>
+	    			<td><video width="500" height="250" controls="controls">
+	    				<source id="video" src="videos/${commitName}" type="video/mp4"></source>
 	    			</video></td>
 	    			
 	    			

@@ -4,7 +4,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-//response.setCharacterEncoding("UTF-8");
+
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -14,11 +14,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>My JSP 'video.jsp' starting page</title>
    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
+		<meta charset="utf-8"></meta>
+
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -38,9 +35,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
 	    	<s:iterator value="videofile" id='videoname'> 
 	    		
+	    		<form method="post" action="CheckVideoName!CheckVideoName.action?videonames=<s:property value='videoname'/>" >
+	    			
+	    			<input type="submit">
+	    		</form>
 	    		
-	    		<a href="movies.jsp?name=<s:property value='videoname'/>"><s:property value='videoname'/></a>
-				<br/>
+	    		<a charset="utf-8" href="CheckVideoName!CheckVideoName.action?commitNames=<s:property value='videoname'/>"><s:property value='videoname'/></a>
+				
+	    		<br/>
 			
 			</s:iterator> 
     	</table>

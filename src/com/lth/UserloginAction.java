@@ -21,6 +21,8 @@ public class UserloginAction extends ActionSupport {
 	private String filesname;
 	
 	private String[] videofile;
+	
+	private String commitName ;
 	InputService ips = new InputService();
 	
 	
@@ -85,6 +87,15 @@ public class UserloginAction extends ActionSupport {
 		return "success";
 	}
 	
+	public String CheckVideoName(){
+		HttpServletRequest hr = ServletActionContext.getRequest();
+		commitName = hr.getParameter("commitNames");
+		//System.out.println(name);
+		//System.out.println(hr.getParameter("commitNames"));
+		System.out.println(commitName);
+		return "success";
+	}
+	
 	
 	public String getName() {
 		return name;
@@ -117,6 +128,13 @@ public class UserloginAction extends ActionSupport {
 	public void setVideofile(String[] videofile) {
 		this.videofile = videofile;
 	}
+	public String getCommitName() {
+		return commitName;
+	}
+	public void setCommitName(String commitName) {
+		this.commitName = commitName;
+	}
+	
 	
 	
 }

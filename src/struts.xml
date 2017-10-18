@@ -19,6 +19,12 @@
             <result name="error">/index.jsp</result>
             
         </action>
+        
+        <action name="CheckVideoName" class="com.lth.UserloginAction" method="CheckVideoName">
+            <result name="success">/movies.jsp</result>
+            <result name="error">/index.jsp</result>
+            
+        </action>
 	 
 	 </package>
 
