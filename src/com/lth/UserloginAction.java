@@ -78,6 +78,8 @@ public class UserloginAction extends ActionSupport {
 	
 	public String VideosName(){
 		VideosService vf = new VideosService();
+
+		vf.FilesCreate(filesname);
 		
 		videofile = vf.getFiles(filesname);
 		
