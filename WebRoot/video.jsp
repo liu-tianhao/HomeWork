@@ -27,6 +27,7 @@ response.setCharacterEncoding("utf-8");
   <body>
   	<div>
     	<form action="VideosName!VideosName.action" method="post">
+    	<p>输入禁止使用"\",请使用"/"</p>
     	<input type="text" name="filesname" required="required" placeholder="文件所在位置">
     	<input type="submit">
     	</form>
