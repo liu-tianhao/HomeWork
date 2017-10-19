@@ -26,24 +26,24 @@ public class VideosService {
 		}*/
 		
 		VideosService vs = new VideosService();
-		vs.FilesCreate("g:/");
+		vs.FilesCreate("G:/小说");
 		
 	}
 	
 	public void FilesCreate(String path){
 		
 		File files = new File(".\\webRoot\\videos");
-		if(!files.exists()){files.delete();}
+		if(files.exists()){files.delete();}
 		
 		File file = new File(".\\webroot");
 		System.out.println(file.getAbsolutePath());
 		Runtime rt = Runtime.getRuntime();
 		Process p;
 		try {
-			String pathint = file.getAbsolutePath()+ "/videos";  //相对地址转绝对路径
+			//String pathint = file.getAbsolutePath()+ "/videos";  //相对地址转绝对路径
 			//String pathint = "C:/Users/Administrator/git/HomeWork/WebRoot/videos";
 			//String pathint = "C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/Test/videos";
-			//String pathint = "F:/workspace/HomeWork/WebRoot/videos";
+			String pathint = "F:/workspace/HomeWork/WebRoot/videos";
 			String pathsource = "G:/视频/执念师一"; //源文件，页面输入
 			String cmd = "cmd.exe /k mklink /j "+"\""+ pathint+"\" " + "\""+ path +"\"" ;
 			p = rt.exec(cmd);

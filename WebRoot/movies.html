@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>movies.html</title>
+	<meta charset="utf-8"></meta>
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <script type="text/javascript">
+	  function GetQueryString(name){
+	     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	     var r = window.location.search.substr(1).match(reg);
+	     if(r!=null)return  unescape(r[2]); return null;
+	  }
+		
+		
+		
+		window.onload=function(){
+    		var video = document.getElementById("video");
+			var src = GetQueryString("name");
+			alert(src);
+			//video.src="f:\workspace\HomeWork\WebRoot\videos\testqqw.mp4";
+			alert(video.src);
+    } 
+    
+  </script>
+  <body>
+    </div>
+    	<table>
+	    		<tr>
+	    			<td><video width="500" height="250" controls="controls">
+	    				<source id="video" src="videos/我.mp4" type="video/mp4"></source>
+	    			</video></td>
+	    			
+	    			
+	    		</tr>
+    	</table>
+  </body>
+</html>

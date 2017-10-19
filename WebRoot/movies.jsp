@@ -52,7 +52,7 @@ request.setCharacterEncoding("utf-8");
   
   
   	<div>
-    	<form action="VideosName!VideosName.action">
+    	<form action="VideosName!VideosName.action" method="post">
     	<input type="text" name="filesname" required="required" placeholder="文件所在位置">
     	<input type="submit">
     	</form>
