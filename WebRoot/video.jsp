@@ -32,15 +32,15 @@ response.setCharacterEncoding("utf-8");
     	</form>
     </div>
     
-    
+    	<p>${filesname}</p>
     	<table>
     
 	    	<s:iterator value="videofile" id='videoname'> 
 	    		
-	    		<form method="post" action="CheckVideoName!CheckVideoName.action?commitNames=我" >
+	    		<!-- <form method="post" action="CheckVideoName!CheckVideoName.action?commitNames=我" >
 	    			
 	    			<input type="submit">
-	    		</form>
+	    		</form> -->
 	    		
 	    		<a onclick="move(this)" href="CheckVideoName!CheckVideoName.action?commitNames=<s:property value='videoname'/>"><s:property value='videoname'/></a>
 				
